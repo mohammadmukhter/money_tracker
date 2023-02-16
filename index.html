@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money Tracker</title>
+
+    <!-- tailwind css link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- header section -->
+    <header>
+      <div class="max-w-[1240px] mx-auto py-6">
+        <p class="text-[#31A5AC] text-4xl font-medium text-center">
+          Money Tracker
+        </p>
+      </div>
+    </header>
+
+    <!-- main section html -->
+    <main class="max-w-[1240px] mx-auto max-h-screen">
+      <section>
+        <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-8 py-4">
+          <div>
+            <img class="w-full h-full" src="./images/cover.png" />
+          </div>
+          <div class="bg-gray-50">
+            <!-- income section -->
+            <div class="px-4 sm:px-16 text-center space-y-4 py-4">
+              <div class="mb-4 text-2xl font-semibold">Income</div>
+              <div
+                class="grid grid-cols-2 justify-items-end items-center gap-x-12"
+              >
+                <div class="font-semibold">Income :</div>
+                <div>
+                  <input
+                    class="bg-[#DCDCDC] p-2 w-full rounded-sm"
+                    type="text"
+                    name="income"
+                    id="income"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Expense section -->
+            <div class="px-4 sm:px-16 text-center space-y-4 pb-8">
+              <div class="mb-4 text-2xl font-semibold">Expenses</div>
+              <div
+                class="grid grid-cols-2 justify-items-end items-center gap-x-12"
+              >
+                <div class="font-semibold">Foods :</div>
+                <div>
+                  <input
+                    class="bg-[#DCDCDC] p-2 w-full rounded-sm"
+                    type="text"
+                    name="food"
+                    id="food"
+                  />
+                </div>
+              </div>
+              <div
+                class="grid grid-cols-2 justify-items-end items-center gap-x-12"
+              >
+                <div class="font-semibold">Rents :</div>
+                <div>
+                  <input
+                    class="bg-[#DCDCDC] p-2 w-full rounded-sm"
+                    type="text"
+                    name="rent"
+                    id="rent"
+                  />
+                </div>
+              </div>
+              <div
+                class="grid grid-cols-2 justify-items-end items-center gap-x-12"
+              >
+                <div class="font-semibold">Cloths :</div>
+                <div>
+                  <input
+                    class="bg-[#DCDCDC] p-2 w-full rounded-sm"
+                    type="text"
+                    name="cloth"
+                    id="cloth"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Calculate button -->
+            <div class="px-4 sm:px-16 text-center space-y-4 pb-4">
+              <div class="mb-4 text-xl font-medium">
+                <button
+                  id="calculate_expense"
+                  class="bg-sky-500 hover:bg-sky-700 focus:bg-red-700 text-white px-4 py-2 w-1/2 rounded-md"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+
+            <!-- total expense and balance section -->
+            <div class="px-4 sm:px-16 text-center space-y-4 pb-4">
+              <div class="mb-4 text-2xl font-semibold">
+                Total Expenses :
+                <span id="total_expense" class="text-red-700">00</span>
+              </div>
+              <div class="mb-4 text-2xl font-semibold">
+                Balance :
+                <span id="balance_after_expense" class="text-blue-700">00</span>
+              </div>
+            </div>
+
+            <!--  savings calculation section -->
+
+            <div class="px-2 md:px-12 text-center space-y-4 py-4">
+              <div
+                class="grid grid-cols-[auto_auto_auto_auto] justify-items-end items-center gap-x-1"
+              >
+                <div class="font-semibold">Save :</div>
+                <div>
+                  <input
+                    class="bg-[#DCDCDC] p-2 w-full rounded-sm"
+                    type="text"
+                    name="save"
+                    id="save"
+                  />
+                </div>
+                <div>%</div>
+                <div>
+                  <button
+                    id="calculate_save"
+                    class="bg-sky-500 hover:bg-sky-700 focus:bg-red-700 text-white px-4 py-2 w-full rounded-md"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- saving and Remaining balance -->
+            <div class="px-4 sm:px-8 md:px-16 text-center space-y-4 pb-4">
+              <div class="mb-4 text-2xl font-semibold">
+                Savings : <span id="save_value" class="text-green-700">00</span>
+              </div>
+              <div class="mb-4 text-2xl font-semibold">
+                Remaining Balance :
+                <span id="remaining_balance" class="text-violet-900">00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- custom js link -->
+    <script src="./js/fieldValidation.js"></script>
+    <script src="./js/expense.js"></script>
+  </body>
+</html>
